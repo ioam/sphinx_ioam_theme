@@ -1,2 +1,2 @@
 include versioneer.py
-include _version.py
+include sphinx_ioam_theme/_version.py
