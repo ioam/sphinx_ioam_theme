@@ -5,7 +5,11 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
+  {% if title|length > 0 %}
   <title>{{ title|striptags|e }} &mdash; {{ shorttitle|striptags|e }}</title>
+  {% else %}
+  <title>{{ shorttitle|striptags|e }}</title>
+  {% endif %}
   <meta name="description" content="{{ DESCRIPTION }}">
   <meta name="author" content="{{ AUTHOR }}">
 
