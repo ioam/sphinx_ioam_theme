@@ -71,15 +71,40 @@
       <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
       <nav>
         <ul id="js-navigation-menu" class="navigation-menu show">
-          {% for name, link in NAV %}
+          {% if second_nav %}
+            {% for name, link in NAV %}
+              <li class="nav-link"><a href="{{ link }}">{{ name }}</a></li>
+            {% endfor %}
+          {% else %}
+            {% for name, link in NAV %}
               <li class="nav-link"><a href="{{ pathto(link) }}">{{ name }}</a></li>
-              {% endfor %}
-	      <li class="nav-link"><div style="display:inline-block;vertical-align: middle;"><div class="search-bar">{% include 'includes/searchbox.html' %}</div></div></li>
+            {% endfor %}
+            <li class="nav-link">
+              <div style="display:inline-block;vertical-align: middle;">
+                <div class="search-bar">
+                  {% include 'includes/searchbox.html' %}
+                </div>
+              </div>
+            </li>
+          {% endif %}
         </ul>
       </nav>
-      
     </div>
   </header>
+  {% if second_nav %}
+  <div class="second-nav">
+    <nav>
+      <ul class="navigation-menu show">
+        {%- for name, link in NAV_DOCS  %}
+          <li class="nav-link doc-head"><a href="{{ pathto(link) }}">{{ name }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="navigation-tools">
+      {% include 'includes/searchbox.html' %}
+    </div>
+  </div>
+  {% endif %}
 
 <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
   <div class="docs section">
