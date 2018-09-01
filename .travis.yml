@@ -4,9 +4,9 @@ language: python
 stages:
   - test
   - name: conda_package
-    if: branch = master AND type != pull_request
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: pypi_package
-    if: branch = master AND type != pull_request
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
 
 jobs:
   include:
@@ -40,12 +40,5 @@ jobs:
       - conda install anaconda-client conda-build
     script:
       - conda build conda.recipe/
-      # TODO: need to upload only if package doesn't exist (as e.g. there are cron builds)
-      - anaconda --token $CONDA_UPLOAD_TOKEN upload --user pyviz --label dev `conda build --output conda.recipe`
+      - anaconda --token $CONDA_UPLOAD_TOKEN upload --user pyviz --label dev --label main `conda build --output conda.recipe`
 
-
-#before_cache:
-#- rm -rf $HOME/.cache/pip/log
-#cache:
-#  directories:
-#  - "$HOME/.cache/pip"
