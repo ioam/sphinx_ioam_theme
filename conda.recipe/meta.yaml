@@ -2,7 +2,7 @@
 
 package:
   name: sphinx_ioam_theme
-  version: {{ sdata['version'] }}
+  version: {{ sdata['version'] | replace('v','') }}
 
 source:
   path: ..
