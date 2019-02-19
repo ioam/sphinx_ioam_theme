@@ -1,3 +1,1 @@
-include versioneer.py
-include sphinx_ioam_theme/_version.py
 include LICENSE.txt
