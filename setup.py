@@ -53,6 +53,7 @@ setup_args = dict(
 
     install_requires = [
         "sphinx",
+        "param >=1.7.0",
     ],
     extras_require = {
         'build': [
