@@ -20,7 +20,7 @@ build:
 requirements:
   build:
     - python {{ sdata['python_requires'] }}
-    {% for dep in sdata['extras_require'].get('build', {}) %}
+    {% for dep in sdata.get('extras_require', {}).get('build', {}) %}
     - {{ dep }}
     {% endfor %}
   run:
