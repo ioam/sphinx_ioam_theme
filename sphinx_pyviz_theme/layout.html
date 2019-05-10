@@ -8,7 +8,7 @@
   {% if title == "&lt;no title&gt;" %}
   <title>{{ shorttitle|striptags|e }}</title>
   {% else %}
-  <title>{{ title|striptags|e }} &mdash; {{ shorttitle|striptags|e }}</title>    
+  <title>{{ title|striptags|e }} &mdash; {{ shorttitle|striptags|e }}</title>
   {% endif %}
   <meta name="description" content="{{ DESCRIPTION }}">
   <meta name="author" content="{{ AUTHOR }}">
@@ -38,7 +38,7 @@
   {% if theme_custom_css %}
     <link rel="stylesheet" href="{{ pathto('_static/' + theme_custom_css, 1) }}">
   {% endif %}
-      
+
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -71,38 +71,35 @@
       <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
       <nav>
         <ul id="js-navigation-menu" class="navigation-menu show">
-          {% if second_nav %}
-            {% for name, link in NAV %}
-              <li class="nav-link"><a href="{{ link }}">{{ name }}</a></li>
+          {% if theme_second_nav|tobool %}
+            {% for name, link in SOCIAL %}
+              <li class="nav-link doc-head"><a href="{{ link }}">{{ name }}</a></li>
             {% endfor %}
           {% else %}
             {% for name, link in NAV %}
-              <li class="nav-link"><a href="{{ pathto(link) }}">{{ name }}</a></li>
+              <li class="nav-link doc-head"><a href="{{ pathto(link) }}">{{ name }}</a></li>
             {% endfor %}
-            <li class="nav-link">
-              <div style="display:inline-block;vertical-align: middle;">
-                <div class="search-bar">
-                  {% include 'includes/searchbox.html' %}
-                </div>
-              </div>
-            </li>
           {% endif %}
+          <li class="nav-link">
+            <div style="display:inline-block;vertical-align: middle;">
+              <div class="search-bar">
+                {% include 'includes/searchbox.html' %}
+              </div>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
-  {% if second_nav %}
+  {% if theme_second_nav|tobool %}
   <div class="second-nav">
     <nav>
       <ul class="navigation-menu show">
-        {%- for name, link in NAV_DOCS  %}
+        {% for name, link in NAV %}
           <li class="nav-link doc-head"><a href="{{ pathto(link) }}">{{ name }}</a></li>
-        {%- endfor %}
+        {% endfor %}
       </ul>
     </nav>
-    <div class="navigation-tools">
-      {% include 'includes/searchbox.html' %}
-    </div>
   </div>
   {% endif %}
 
