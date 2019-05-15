@@ -6,7 +6,8 @@ setup_args = dict(
     name='sphinx_pyviz_theme',
     version=versioneer.get_version(),
     url="https://github.com/pyviz-dev/sphinx_pyviz_theme",
-    description="For nbsite",
+    description="Theme for building pyviz sites; best when used with nbsite.",
+    long_description=open("README.md").read(),
     license="BSD-3",
     zip_safe=False,
     packages=['sphinx_pyviz_theme'],
@@ -14,7 +15,7 @@ setup_args = dict(
         'theme.conf',
         '*.html',
         'includes/*.html',
-        'static/css/*.css',
+        'static/css/*.css_t',
         'static/js/*.js',
         'static/images/*.*'
     ]},
