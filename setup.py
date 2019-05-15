@@ -8,6 +8,7 @@ setup_args = dict(
     url="https://github.com/pyviz-dev/sphinx_pyviz_theme",
     description="Theme for building pyviz sites; best when used with nbsite.",
     long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
     license="BSD-3",
     zip_safe=False,
     packages=['sphinx_pyviz_theme'],
