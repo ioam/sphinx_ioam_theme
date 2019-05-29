@@ -61,7 +61,7 @@
 
 </head>
 <body class="">
-
+  {% if theme_first_nav|tobool %}
   <header class="navigation">
     <div class="wrapper">
       <a href="{{ pathto('index') }}" class="logo">
@@ -91,6 +91,7 @@
       </nav>
     </div>
   </header>
+  {% endif %}
   {% if theme_second_nav|tobool %}
   <div class="second-nav">
     <nav>
@@ -117,25 +118,28 @@
 
 <!-- END MAIN BODY OF DOCS ––––––––––––– -->
 
-<footer class="footer">
-  <div class="footer-links">
-    <ul>
-      <li><span class="footer-title">Links</span></li>
-      {% for name, link in LINKS %}
-          <li><a href="{{ pathto(link) }}">{{ name }}</a></li>
-      {% endfor %}
-    </ul>
-    <ul>
-      <li><span class="footer-title">Join Us</span></li>
-      {% for name, link in SOCIAL %}
-          <li><a href="{{ link }}">{{ name }}</a></li>
-      {% endfor %}
-    </ul>
-    <ul class="copyright">
-      <li>{{ copyright }}</li>
-    </ul>
-  </div>
-</footer>
+  {% if theme_footer|tobool %}
+  <footer class="footer">
+    <div class="footer-links">
+      <ul>
+        <li><span class="footer-title">Links</span></li>
+        {% for name, link in LINKS %}
+            <li><a href="{{ pathto(link) }}">{{ name }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul>
+        <li><span class="footer-title">Join Us</span></li>
+        {% for name, link in SOCIAL %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul class="copyright">
+        <li>{{ copyright }}</li>
+      </ul>
+    </div>
+  </footer>
+  {% endif %}
+
 
 <!-- Google Analytics -->
 {% include 'includes/ga.html' %}
