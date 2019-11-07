@@ -1,7 +1,7 @@
 {% set sdata = load_setup_py_data() %}
 
 package:
-  name: sphinx_pyviz_theme
+  name: sphinx_holoviz_theme
   version: {{ sdata['version'] }}
 
 source:
@@ -25,7 +25,7 @@ requirements:
 
 test:
   imports:
-    - sphinx_pyviz_theme
+    - sphinx_holoviz_theme
 
 about:
   home: {{ sdata['url'] }}

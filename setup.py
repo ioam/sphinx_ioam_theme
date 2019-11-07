@@ -3,16 +3,16 @@ from setuptools import setup
 import versioneer
 
 setup_args = dict(
-    name='sphinx_pyviz_theme',
+    name='sphinx_holoviz_theme',
     version=versioneer.get_version(),
-    url="https://github.com/pyviz-dev/sphinx_pyviz_theme",
-    description="Theme for building pyviz sites; best when used with nbsite.",
+    url="https://github.com/pyviz-dev/sphinx_holoviz_theme",
+    description="Theme for building HoloViz sites; best when used with nbsite.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     license="BSD-3",
     zip_safe=False,
-    packages=['sphinx_pyviz_theme'],
-    package_data={'sphinx_pyviz_theme': [
+    packages=['sphinx_holoviz_theme'],
+    package_data={'sphinx_holoviz_theme': [
         'theme.conf',
         '*.html',
         'includes/*.html',
@@ -23,7 +23,7 @@ setup_args = dict(
     include_package_data=True,
     entry_points = {
         'sphinx.html_themes': [
-            'sphinx_pyviz_theme = sphinx_pyviz_theme',
+            'sphinx_holoviz_theme = sphinx_holoviz_theme',
         ]
     },
     python_requires = ">=2.7",

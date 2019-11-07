@@ -1,24 +1,24 @@
-# sphinx_pyviz_theme: Theme for building pyviz sites
+# sphinx_holoviz_theme: Theme for building HoloViz sites
 
 |    |    |
 | --- | --- |
-| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz-dev/sphinx_pyviz_theme.svg?branch=master)](https://travis-ci.org/pyviz-dev/sphinx_pyviz_theme) |
-| Latest dev release | [![Github tag](https://img.shields.io/github/tag/pyviz-dev/sphinx_pyviz_theme.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz-dev/sphinx_pyviz_theme/tags) |
-| Latest release | [![Github release](https://img.shields.io/github/release/pyviz-dev/sphinx_pyviz_theme.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz-dev/sphinx_pyviz_theme/releases) [![PyPI version](https://img.shields.io/pypi/v/sphinx_pyviz_theme.svg?colorB=cc77dd)](https://pypi.python.org/pypi/sphinx_pyviz_theme) [![sphinx_pyviz_theme version](https://img.shields.io/conda/v/pyviz/sphinx_pyviz_theme.svg?colorB=4488ff&style=flat)](https://anaconda.org/pyviz/sphinx_pyviz_theme) [![conda-forge version](https://img.shields.io/conda/v/conda-forge/sphinx_pyviz_theme.svg?label=conda%7Cconda-forge&colorB=4488ff)](https://anaconda.org/conda-forge/sphinx_pyviz_theme) |
+| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz-dev/sphinx_holoviz_theme.svg?branch=master)](https://travis-ci.org/pyviz-dev/sphinx_holoviz_theme) |
+| Latest dev release | [![Github tag](https://img.shields.io/github/tag/pyviz-dev/sphinx_holoviz_theme.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz-dev/sphinx_holoviz_theme/tags) |
+| Latest release | [![Github release](https://img.shields.io/github/release/pyviz-dev/sphinx_holoviz_theme.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz-dev/sphinx_holoviz_theme/releases) [![PyPI version](https://img.shields.io/pypi/v/sphinx_holoviz_theme.svg?colorB=cc77dd)](https://pypi.python.org/pypi/sphinx_holoviz_theme) [![sphinx_holoviz_theme version](https://img.shields.io/conda/v/pyviz/sphinx_holoviz_theme.svg?colorB=4488ff&style=flat)](https://anaconda.org/pyviz/sphinx_holoviz_theme) [![conda-forge version](https://img.shields.io/conda/v/conda-forge/sphinx_holoviz_theme.svg?label=conda%7Cconda-forge&colorB=4488ff)](https://anaconda.org/conda-forge/sphinx_holoviz_theme) |
 
 ## What is it?
-sphinx_pyviz_theme is the theme that is used when building sites in the
-[pyviz](https://pyviz.org) ecosystem. This theme is best used in conjunction
-with [nbsite](https://github/pyviz/nbsite). See the [nbsite docs](https://nbsite.pyviz.org)
+sphinx_holoviz_theme is the theme that is used when building sites in the
+[HoloViz](https://holoviz.org) ecosystem. This theme is best used in conjunction
+with [nbsite](https://github/pyviz-dev/nbsite). See the [nbsite docs](https://nbsite.pyviz.org)
 for examples.
 
 ## How to use
 
-To use this theme: `pip/conda install sphinx_pyviz_theme` and set html_theme to sphinx_pyviz_theme. To control the look and feel, change html_theme_options in conf.py:
+To use this theme: `pip/conda install sphinx_holoviz_theme` and set html_theme to sphinx_holoviz_theme. To control the look and feel, change html_theme_options in conf.py:
 
 ```python
 html_static_path += ['_static']
-html_theme = 'sphinx_pyviz_theme'
+html_theme = 'sphinx_holoviz_theme'
 html_theme_options = {
     'custom_css': 'site.css',
     'logo': 'nbsite-logo.png',
@@ -43,8 +43,9 @@ general improvements. If you have general improvements, please open a PR on the 
 
 
 
-## About PyViz
+## About HoloViz
 
-sphinx_pyviz_theme is part of the PyViz initiative for making Python-based visualization tools work well together.
-See [pyviz.org](http://pyviz.org) for related packages that you can use with sphinx_pyviz_theme and
-[status.pyviz.org](http://status.pyviz.org) for the current status of each PyViz project.
+sphinx_holoviz_theme is part of the HoloViz ecosystem for making high-level tools to simplify
+visualization in Python. See [holoviz.org](http://holoviz.org) for related packages that you
+can use with sphinx_holoviz_theme and [status.pyviz.org](http://status.pyviz.org) for the
+current status of each HoloViz project.
