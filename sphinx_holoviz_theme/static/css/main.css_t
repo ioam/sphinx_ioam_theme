@@ -1827,16 +1827,6 @@ dt a.headerlink {
     vertical-align: inherit
 }
 
-.simple {
-    display: inline-block;
-    margin-bottom: .75em;
-    padding-left: 1.5em
-}
-
-.simple ~ p {
-    clear: both
-}
-
 .mosaic.docs-home {
     margin-top: 2em
 }
