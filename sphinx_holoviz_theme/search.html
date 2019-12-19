@@ -20,10 +20,11 @@
     <span id="search-progress" style="padding-left: 10px"></span>
   </form>
 
+  {% if GOOGLE_SEARCH_ID %}
   <div id="search-results">
 	<script>
 	  (function() {
-      var cx = '006807479272082416678:p6n_f0d8taw';
+      var cx = {{ GOOGLE_SEARCH_ID }}';
       var gcse = document.createElement('script');
       gcse.type = 'text/javascript';
       gcse.async = true;
@@ -33,7 +34,7 @@
 	  })();
 	</script>
     <gcse:searchresults-only></gcse:searchresults-only>
-
   </div>
+  {% endif %}
 
 {% endblock %}
