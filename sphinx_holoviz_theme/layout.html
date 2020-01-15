@@ -154,7 +154,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '{{ GOOGLE_ANALYTICS_UA }}');
+  gtag('config', '{{ GOOGLE_ANALYTICS_UA }}', { 'anonymize_ip': true });
 </script>
 {% endif %}
 
