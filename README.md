@@ -2,7 +2,7 @@
 
 |    |    |
 | --- | --- |
-| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz-dev/sphinx_holoviz_theme.svg?branch=master)](https://travis-ci.org/pyviz-dev/sphinx_holoviz_theme) |
+| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz-dev/sphinx_holoviz_theme.svg?branch=main)](https://travis-ci.org/pyviz-dev/sphinx_holoviz_theme) |
 | Latest dev release | [![Github tag](https://img.shields.io/github/tag/pyviz-dev/sphinx_holoviz_theme.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz-dev/sphinx_holoviz_theme/tags) |
 | Latest release | [![Github release](https://img.shields.io/github/release/pyviz-dev/sphinx_holoviz_theme.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz-dev/sphinx_holoviz_theme/releases) [![PyPI version](https://img.shields.io/pypi/v/sphinx_holoviz_theme.svg?colorB=cc77dd)](https://pypi.python.org/pypi/sphinx_holoviz_theme) [![sphinx_holoviz_theme version](https://img.shields.io/conda/v/pyviz/sphinx_holoviz_theme.svg?colorB=4488ff&style=flat)](https://anaconda.org/pyviz/sphinx_holoviz_theme) [![conda-forge version](https://img.shields.io/conda/v/conda-forge/sphinx_holoviz_theme.svg?label=conda%7Cconda-forge&colorB=4488ff)](https://anaconda.org/conda-forge/sphinx_holoviz_theme) |
 
