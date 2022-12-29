@@ -8,7 +8,7 @@
   {% if title == "&lt;no title&gt;" %}
   <title>{{ shorttitle|striptags|e }}</title>
   {% else %}
-  <title>{{ title|striptags|e }} &mdash; {{ shorttitle|striptags|e }}</title>    
+  <title>{{ title|striptags|e }} &mdash; {{ shorttitle|striptags|e }}</title>
   {% endif %}
   <meta name="description" content="{{ DESCRIPTION }}">
   <meta name="author" content="{{ AUTHOR }}">
@@ -38,7 +38,7 @@
   {% if theme_custom_css %}
     <link rel="stylesheet" href="{{ pathto('_static/' + theme_custom_css, 1) }}">
   {% endif %}
-      
+
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -61,25 +61,52 @@
 
 </head>
 <body class="">
-
+  {% if theme_first_nav|tobool %}
   <header class="navigation">
     <div class="wrapper">
       <a href="{{ pathto('index') }}" class="logo">
         <img src="{{ pathto('_static/' + theme_logo, 1) }}" alt="Logo">
       </a>
-      <a href="{{ pathto('index') }}" class="navigation-menu logo-text">{{ PROJECT }}</a>
+      {% if theme_include_logo_text|tobool %}
+        <a href="{{ pathto('index') }}" class="navigation-menu logo-text">{{ PROJECT }}</a>
+      {% endif %}
       <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
       <nav>
         <ul id="js-navigation-menu" class="navigation-menu show">
-          {% for name, link in NAV %}
-              <li class="nav-link"><a href="{{ pathto(link) }}">{{ name }}</a></li>
-              {% endfor %}
-	      <li class="nav-link"><div style="display:inline-block;vertical-align: middle;"><div class="search-bar">{% include 'includes/searchbox.html' %}</div></div></li>
+          {% if theme_second_nav|tobool %}
+            {% for name, link in SOCIAL %}
+              <li class="nav-link doc-head"><a href="{{ link }}">{{ name }}</a></li>
+            {% endfor %}
+          {% else %}
+            {% for name, link in NAV %}
+              <li class="nav-link doc-head"><a href="{{ pathto(link) }}">{{ name }}</a></li>
+            {% endfor %}
+          {% endif %}
+          {% if GOOGLE_SEARCH_ID %}
+          <li class="nav-link">
+            <div style="display:inline-block;vertical-align: middle;">
+              <div class="search-bar">
+                {% include 'includes/searchbox.html' %}
+              </div>
+            </div>
+          </li>
+          {% endif %}
         </ul>
       </nav>
-      
     </div>
   </header>
+  {% endif %}
+  {% if theme_second_nav|tobool %}
+  <div class="second-nav">
+    <nav>
+      <ul class="navigation-menu show">
+        {% for name, link in NAV %}
+          <li class="nav-link doc-head"><a href="{{ pathto(link) }}">{{ name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
 
 <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
   <div class="docs section">
@@ -95,28 +122,41 @@
 
 <!-- END MAIN BODY OF DOCS ––––––––––––– -->
 
-<footer class="footer">
-  <div class="footer-links">
-    <ul>
-      <li><span class="footer-title">Links</span></li>
-      {% for name, link in LINKS %}
-          <li><a href="{{ pathto(link) }}">{{ name }}</a></li>
-      {% endfor %}
-    </ul>
-    <ul>
-      <li><span class="footer-title">Join Us</span></li>
-      {% for name, link in SOCIAL %}
-          <li><a href="{{ link }}">{{ name }}</a></li>
-      {% endfor %}
-    </ul>
-    <ul class="copyright">
-      <li>{{ copyright }}</li>
-    </ul>
-  </div>
-</footer>
+  {% if theme_footer|tobool %}
+  <footer class="footer">
+    <div class="footer-links">
+      <ul>
+        <li><span class="footer-title">Links</span></li>
+        {% for name, link in LINKS %}
+            <li><a href="{{ pathto(link) }}">{{ name }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul>
+        <li><span class="footer-title">Join Us</span></li>
+        {% for name, link in SOCIAL %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul class="copyright">
+        <li>{{ copyright }}</li>
+      </ul>
+    </div>
+  </footer>
+  {% endif %}
+
 
 <!-- Google Analytics -->
-{% include 'includes/ga.html' %}
+{% if GOOGLE_ANALYTICS_UA %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS_UA }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ GOOGLE_ANALYTICS_UA }}', { 'anonymize_ip': true });
+</script>
+{% endif %}
 
 <!-- MathJax Config -->
 <script type="text/x-mathjax-config">

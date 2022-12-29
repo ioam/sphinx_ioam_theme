@@ -1,3 +1,4 @@
 include versioneer.py
-include sphinx_ioam_theme/_version.py
+include sphinx_holoviz_theme/_version.py
 include LICENSE.txt
+include README.md

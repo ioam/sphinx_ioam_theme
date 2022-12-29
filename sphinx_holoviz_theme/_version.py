@@ -42,8 +42,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440-pre"
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "sphinx_ioam_theme-"
-    cfg.versionfile_source = "sphinx_ioam_theme/_version.py"
+    cfg.parentdir_prefix = "sphinx_holoviz_theme-"
+    cfg.versionfile_source = "sphinx_holoviz_theme/_version.py"
     cfg.verbose = False
     return cfg
 
